@@ -49,6 +49,7 @@ namespace MusicPlayer.Model
                 {
                     context.Songs.Remove((from x in context.Songs where x.SongID == ID select x).FirstOrDefault());
                     context.SaveChanges();
+                    MessageBox.Show("Action successfull!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
             catch (Exception ex)
@@ -65,6 +66,7 @@ namespace MusicPlayer.Model
                 {
                     context.Songs.Add(song);
                     context.SaveChanges();
+                    MessageBox.Show("Action successfull!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
             catch (Exception ex)
@@ -82,6 +84,7 @@ namespace MusicPlayer.Model
                     Song s = (from x in context.Songs where x.SongID == song.SongID select x).FirstOrDefault();
                     s = song;
                     context.SaveChanges();
+                    MessageBox.Show("Action successfull!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
             catch (Exception ex)

@@ -5,8 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MusicPlayer.View"
         mc:Ignorable="d"
-        Title="UserView" Height="450" Width="800">
+        Title="Music" Height="450" Width="550" FontSize="14" Background="IndianRed" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Border Background="DarkOrange" CornerRadius="50" Margin="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="6"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="6"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1" Grid.Row="3" Height="auto" Width="auto">
+                    <DataGrid Name="DataGridEmployees" ItemsSource="{Binding SongList, UpdateSourceTrigger=PropertyChanged}"
+                      SelectedItem="{Binding Song, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" HeadersVisibility="Column"
+                      AutoGenerateColumns="False" HorizontalGridLinesBrush="Black" BorderBrush="Black" Foreground="Black"
+                      FontWeight="Bold">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Song ID" Width="auto" Binding="{Binding SongID}"/>
+                            <DataGridTextColumn Header="Song" Width="auto"  Binding="{Binding SongName}"/>
+                            <DataGridTextColumn Header="Author" Width="auto"  Binding="{Binding SongAuthor}"/>
+                            <DataGridTextColumn Header="Length" Width="auto"  Binding="{Binding SongDuration}"/>
+                            <DataGridTemplateColumn Header="Delete">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Name="btnDelete"
+                                        Command="{Binding DataContext.DeleteSong, RelativeSource={RelativeSource FindAncestor,
+                                    AncestorType={x:Type Window}},UpdateSourceTrigger=PropertyChanged}" Content="Delete"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+                <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+                    <Button Name="btnLogOut" Content="Logout" Width="Auto" Height="20" HorizontalAlignment="Left" Margin="0,0,20,0"
+                Command="{Binding Logout, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold"/>
+                    <Button Name="btnAddEmployee" Content="Add Employee" Width="Auto" Height="20" HorizontalAlignment="Left" Margin="0,0,20,0"
+                Command="{Binding AddEmployee, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold"/>
+                    <Button Name="btnPlaySong" Content="Play Song" Width="Auto" Height="20" HorizontalAlignment="Left" Margin="0,0,20,0"
+                Command="{Binding PlaySong, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Visibility="Visible"/>
+                    <Button Name="btnStopSong" Content="Stop Song" Width="Auto" Height="20" HorizontalAlignment="Left" Margin="0,0,20,0"
+                Command="{Binding StopSong, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Visibility="Hidden"/>
+                </StackPanel>
+            </Grid>
+        </Border>
     </Grid>
 </Window>

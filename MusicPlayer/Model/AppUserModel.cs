@@ -49,6 +49,7 @@ namespace MusicPlayer.Model
                 {
                     context.AppUsers.Add(au);
                     context.SaveChanges();
+                    MessageBox.Show("Action successfull!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
             catch (Exception ex)
@@ -65,6 +66,7 @@ namespace MusicPlayer.Model
                 {
                     context.AppUsers.Remove((from x in context.AppUsers where x.AppUserID == ID select x).FirstOrDefault());
                     context.SaveChanges();
+                    MessageBox.Show("Action successfull!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
             catch (Exception ex)
@@ -82,6 +84,7 @@ namespace MusicPlayer.Model
                     AppUser user = (from x in context.AppUsers where x.AppUserID == au.AppUserID select x).FirstOrDefault();
                     user = au;
                     context.SaveChanges();
+                    MessageBox.Show("Action successfull!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
             catch (Exception ex)

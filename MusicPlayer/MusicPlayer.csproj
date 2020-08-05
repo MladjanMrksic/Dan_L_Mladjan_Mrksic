@@ -67,6 +67,7 @@
     <Compile Include="AppUser.cs">
       <DependentUpon>MuscPlayerDatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Command\RelayCommand.cs" />
     <Compile Include="Model\AppUserModel.cs" />
     <Compile Include="Model\SongModel.cs" />
     <Compile Include="MuscPlayerDatabaseModel.cs">
@@ -81,6 +82,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Validation\LoginValidation.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\UserViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
@@ -135,10 +137,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Command\" />
-    <Folder Include="Validation\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="MuscPlayerDatabaseModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
