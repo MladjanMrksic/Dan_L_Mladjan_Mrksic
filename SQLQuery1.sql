@@ -24,3 +24,7 @@ SongName nvarchar(50),
 SongAuthor nvarchar(50),
 SongDuration Time,
 )
+
+INSERT INTO Song(SongName,SongAuthor,SongDuration) VALUES ('SongOne','AuthorOne','00:03:55');
+INSERT INTO Song(SongName,SongAuthor,SongDuration) VALUES ('SongTwo','AuthorTwo','00:03:25');
+INSERT INTO Song(SongName,SongAuthor,SongDuration) VALUES ('SongThree','AuthorThree','00:03:15');
