@@ -67,6 +67,8 @@
     <Compile Include="AppUser.cs">
       <DependentUpon>MuscPlayerDatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\AppUserModel.cs" />
+    <Compile Include="Model\SongModel.cs" />
     <Compile Include="MuscPlayerDatabaseModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -135,7 +137,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Command\" />
-    <Folder Include="Model\" />
     <Folder Include="Validation\" />
   </ItemGroup>
   <ItemGroup>
